@@ -13,6 +13,10 @@ check_interval: 300
 coordinate_digits: 2
 
 owner_jid: admin@example.org
+
+# domain_whitelist:
+#   - jabber.example.com
+
 # This welcome message is sent once to every user upon registration of their
 # first coordinate (right after the usual confirmation message).
 #

@@ -53,6 +53,11 @@ class NinaXMPP:
             await asyncio.wait({update_feeds_task})
 
     def message_received(self, msg):
+        if 'domain_whitelist' in self.config and self.config['domain_whitelist'] and \
+           msg.from_.domain not in self.config['domain_whitelist']:
+            self.logger.info("Ignoring message from %s because JID domain is not in whitelist", msg.from_)
+            return
+
         if not msg.body:
             return
 
