@@ -3,7 +3,7 @@ Description=NINA XMPP bot
 After=prosody.service ejabberd.service
 
 [Service]
-ExecStart=/usr/local/bin/nina_xmpp --log-level INFO config.yml
+ExecStart=/usr/local/bin/nina_xmpp config.yml
 WorkingDirectory=/var/lib/nina_xmpp
 StateDirectory=nina_xmpp
 DynamicUser=yes
