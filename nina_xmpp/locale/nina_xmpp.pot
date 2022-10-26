@@ -28,7 +28,7 @@ msgstr ""
 
 #: nina_xmpp/__init__.py:235
 #, python-brace-format
-msgid "Already registerd to coordinates {0.y}, {0.x}"
+msgid "Already registered to coordinates {0.y}, {0.x}"
 msgstr ""
 
 #: nina_xmpp/__init__.py:246

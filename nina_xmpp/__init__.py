@@ -227,7 +227,7 @@ class NinaXMPP:
                     return ret
             except IntegrityError:
                 self.db.rollback()
-                return _('Already registerd to coordinates {0.y}, {0.x}').format(point)
+                return _('Already registered to coordinates {0.y}, {0.x}').format(point)
 
     def unregister(self, jid, area):
         'Unregister from messages regarding a coordinate, or "unregister all"'
