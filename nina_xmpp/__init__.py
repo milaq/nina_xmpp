@@ -108,7 +108,7 @@ class NinaXMPP:
                     self.logger.info(f'Updating feed {url} for the first time')
                     feed = Feed(url=url)
                 else:
-                    self.logger.info(
+                    self.logger.debug(
                         f'Updating feed {url} (last modified: {feed.last_modified})'
                     )
                     if feed.last_modified:
