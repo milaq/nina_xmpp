@@ -18,7 +18,7 @@ class Registration(Base):
     __tablename__ = 'registration'
     id = Column(Integer, primary_key=True)
     jid = Column(String, index=True, nullable=False)
-    point = Column(Geometry(geometry_type='POINT', management=True), nullable=False)
+    point = Column(Geometry(geometry_type='POINT'), nullable=False)
 
 
 # cannot use UniqueConstraint since the point column is added later on
@@ -45,6 +45,6 @@ def initialize(database):
     engine = create_engine(database)
     listen(engine, 'connect', _load_spatialite)
     with engine.connect() as conn:
-        conn.execute(select([func.InitSpatialMetaData(True, 'WGS84')]))
+        conn.execute(select(func.InitSpatialMetaData(True, 'WGS84')))
     Base.metadata.create_all(engine)
     return sessionmaker(bind=engine)()
